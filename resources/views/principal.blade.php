@@ -27,7 +27,7 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuarios <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
 	            <li><a href="{{url('/registrarUsuario')}}">Registrar</a></li>
-	            <li><a href="#">Another action</a></li>
+	            <li><a href="{{url('/consultarUsuarios')}}">Consultar usuarios</a></li>
 	            <li><a href="#">Something else here</a></li>
 	            <li class="divider"></li>
 	            <li><a href="#">Separated link</a></li>

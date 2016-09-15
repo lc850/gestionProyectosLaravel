@@ -31,6 +31,11 @@ Route::get('/registrarUsuario', 'principalController@registrarUsuario');
 
 Route::post('/guardarUsuario', 'usuariosController@guardar');
 
+Route::get('/consultarUsuarios', 'usuariosController@consultar');
+
+
+
+
 
 
 
