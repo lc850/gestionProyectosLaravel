@@ -15,4 +15,8 @@ class ejemploController extends Controller
     public function inicio(){
     	return view('home');
     }
+
+    public function registroUsuarios(){
+    	return view('registroUsuarios');
+    }
 }

@@ -23,13 +23,23 @@ class usuariosController extends Controller
     	$nuevo->correo=$correo;
     	$nuevo->save();
 
-    	return Redirect('/registrarUsuario');
+    	return Redirect('/consultarUsuarios');
 
     }
 
     public function consultar(){
         $usuarios=usuarios::all();
         return view('consultarUsuarios', compact('usuarios'));
+    }
+
+    public function eliminar($id){
+        usuarios::find($id)->delete();
+        return Redirect('/consultarUsuarios');
+    }
+
+    public function actualizar($id){
+        $user = usuarios::find($id);
+        return view('actualizarUsuarios', compact('user'));
     }
 
 
