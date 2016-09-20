@@ -20,7 +20,7 @@
 //Route::get('/inicio', 'ejemploController@inicio');
 
 //Muestra formulario de registro
-Route::get('/registroUsuarios', 'ejemploController@registroUsuarios');
+//Route::get('/registroUsuarios', 'ejemploController@registroUsuarios');
 
 //Route::get('/ejemplo', 'usuariosController@ejemplo');
 
@@ -38,7 +38,7 @@ Route::get('/eliminarUsuario/{id}', 'usuariosController@eliminar');
 
 Route::get('/actualizarUsuario/{id}', 'usuariosController@actualizar');
 
-
+Route::post('/actualizar/{id}', 'usuariosController@actualizarUsuario');
 
 
 

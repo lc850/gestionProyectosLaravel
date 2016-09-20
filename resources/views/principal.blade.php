@@ -28,6 +28,18 @@
 	          <ul class="dropdown-menu" role="menu">
 	            <li><a href="{{url('/registrarUsuario')}}">Registrar</a></li>
 	            <li><a href="{{url('/consultarUsuarios')}}">Consultar usuarios</a></li>
+	            <li><a href="#">Asignar a proyectos</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proyectos <span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a href="">Registrar</a></li>
+	            <li><a href="">Consultar proyectos</a></li>
 	            <li><a href="#">Something else here</a></li>
 	            <li class="divider"></li>
 	            <li><a href="#">Separated link</a></li>

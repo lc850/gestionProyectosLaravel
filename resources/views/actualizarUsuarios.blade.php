@@ -5,7 +5,7 @@
 @stop
 
 @section('contenido')
-	<form action="" method="POST">
+	<form action="{{url('/actualizar')}}/{{$user->id}}" method="POST">
 		<input type="hidden" name="_token" value="{{csrf_token() }}">
 		<div class="form-group">
 			<label for="nombre">Nombre</label>
@@ -32,7 +32,7 @@
 			<label for="correo">Correo</label>
 			<input type="email" class="form-control" name="correo" required value="{{$user->correo}}">
 		</div>
-		<input type="submit" class="btn btn-primary">
+		<input type="submit" class="btn btn-primary" value="Actualizar">
 		<a href="{{url('/consultarUsuarios')}}" class="btn btn-danger">Cancelar</a>
 	</form>
 @stop
