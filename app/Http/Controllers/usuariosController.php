@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\usuarios;
 use App\Http\Requests;
+use DB;
 
 class usuariosController extends Controller
 {
@@ -28,7 +29,7 @@ class usuariosController extends Controller
     }
 
     public function consultar(){
-        $usuarios=usuarios::all();
+        $usuarios=DB::table('usuarios')->paginate(5);
         return view('consultarUsuarios', compact('usuarios'));
     }
 
@@ -53,7 +54,16 @@ class usuariosController extends Controller
         return Redirect('/consultarUsuarios');
     }
 
+    public function pdfUsuarios(){
+        $usuarios=usuarios::all();
 
+        $vista=view('pdfUsuarios', compact('usuarios'));
+        $dompdf=\App::make('dompdf.wrapper');
+        $dompdf->loadHTML($vista);
+        return $dompdf->stream();
+    }
+
+    
 
 
 

@@ -40,11 +40,15 @@ Route::get('/actualizarUsuario/{id}', 'usuariosController@actualizar');
 
 Route::post('/actualizar/{id}', 'usuariosController@actualizarUsuario');
 
+Route::get('/registrarProyectos', 'proyectosController@registrar');
 
+Route::post('/guardarProyecto', 'proyectosController@guardar');
 
+Route::get('/consultarProyectos', 'proyectosController@consultar');
 
+Route::get('/eliminarProyecto/{id}', 'proyectosController@eliminar');
 
-
+Route::get('/pdfUsuarios', 'usuariosController@pdfUsuarios');
 
 
 
