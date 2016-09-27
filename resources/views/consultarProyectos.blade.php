@@ -24,6 +24,7 @@
 					<td>{{$p->f_inicio}}</td>
 					<td>{{$p->f_fin}}</td>
 					<td>
+						<a href="" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-user" aria-hidden="true">Asignar</span></a>
 						<a href="" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true">Editar</span></a>
 
 						<a href="{{url('/eliminarProyecto')}}/{{$p->id}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true">Eliminar</span></a>
