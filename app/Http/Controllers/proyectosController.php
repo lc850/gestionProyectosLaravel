@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\proyectos;
+use DB;
 
 class proyectosController extends Controller
 {
@@ -32,4 +33,31 @@ class proyectosController extends Controller
         proyectos::find($id)->delete();
         return Redirect('/consultarProyectos');
     }
+
+    public function asignarUsuarios($id){
+        $usuariosP=DB::table('usuarios AS u')
+            ->join('usuarios_proyectos AS up', 'u.id', '=', 'up.id_usuario')
+            ->where('up.id_proyecto', '=', $id)
+            ->select('u.id', 'u.nombre', 'u.edad', 'u.sexo', 'u.correo', 'up.id AS upid')
+            ->get();
+
+        $lista=DB::table('usuarios_proyectos')
+            ->where('id_proyecto', '=', $id)
+            ->lists('id_usuario');
+
+        $usuarios=DB::table('usuarios')
+            ->whereNotIn('id', $lista)
+            ->get();
+
+        $proyecto=proyectos::find($id);
+
+        return view('asignarUsuarios', compact('usuarios', 'usuariosP', 'proyecto'));
+    }
 }
+
+
+
+
+
+
+

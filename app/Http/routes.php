@@ -50,6 +50,8 @@ Route::get('/eliminarProyecto/{id}', 'proyectosController@eliminar');
 
 Route::get('/pdfUsuarios', 'usuariosController@pdfUsuarios');
 
+route::get('/asignarUsuarios/{idp}', 'proyectosController@asignarUsuarios');
+
 
 
 
