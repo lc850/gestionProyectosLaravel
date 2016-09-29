@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\proyectos;
+use App\usuarios_proyectos;
 use DB;
 
 class proyectosController extends Controller
@@ -53,7 +54,33 @@ class proyectosController extends Controller
 
         return view('asignarUsuarios', compact('usuarios', 'usuariosP', 'proyecto'));
     }
+
+    public function usuarioProyecto($id, Request $datos){
+        $nuevo= new usuarios_proyectos;
+        $nuevo->id_usuario=$datos->input('id_usu');
+        $nuevo->id_proyecto=$id;
+        $nuevo->save();
+
+        return Redirect('/asignarUsuarios/'.$id);
+    }
+
+    public function quitarUsuario($id){
+        $registro=usuarios_proyectos::find($id);
+        $id_proyecto=$registro->id_proyecto;
+        $registro->delete();
+
+        return Redirect('/asignarUsuarios/'.$id_proyecto);
+    }
 }
+
+
+
+
+
+
+
+
+
 
 
 

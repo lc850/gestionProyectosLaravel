@@ -50,11 +50,11 @@ Route::get('/eliminarProyecto/{id}', 'proyectosController@eliminar');
 
 Route::get('/pdfUsuarios', 'usuariosController@pdfUsuarios');
 
-route::get('/asignarUsuarios/{idp}', 'proyectosController@asignarUsuarios');
+Route::get('/asignarUsuarios/{idp}', 'proyectosController@asignarUsuarios');
 
+Route::post('/usuarioProyecto/{idp}', 'proyectosController@usuarioProyecto');
 
-
-
+Route::get('/quitarUsuario/{id}', 'proyectosController@quitarUsuario');
 
 
 

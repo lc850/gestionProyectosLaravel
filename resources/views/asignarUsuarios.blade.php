@@ -5,9 +5,10 @@
 @stop
 
 @section('contenido')
-	<form action="" method="POST">
+	<form action="{{url('/usuarioProyecto')}}/{{$proyecto->id}}" method="POST">
+	<input type="hidden" name="_token" value="{{csrf_token() }}">
 		<div class="form-group">
-			<select class="form-control">
+			<select name="id_usu" class="form-control">
 				@foreach($usuarios as $u)
 					<option value="{{$u->id}}">{{$u->nombre}}</option>
 				@endforeach
@@ -41,7 +42,7 @@
 					@endif
 					<td>{{$up->correo}}</td>
 					<td>
-						<a href="" class="btn btn-danger btn-xs">
+						<a href="{{url('/quitarUsuario')}}/{{$up->upid}}" class="btn btn-danger btn-xs">
 							<span class="glyphicon glyphicon-user" aria-hidden="true">Quitar</span>
 						</a>
 					</td>
